@@ -42,32 +42,5 @@ class ProductRepositoryTest {
 
     }
 
-    @Test
-    void findById() {
-        ProductRepository repo = new ProductRepository();
-        repo.save(firstBook);
-        repo.save(secondBook);
-        repo.save(thirdBook);
 
-
-        Product[] expected = new Product[]{thirdBook};
-        Product[] actual = repo.findById(3);
-
-        assertArrayEquals(expected, actual);
-    }
-
-
-    @Test
-    void findById3() {
-        ProductRepository repo = new ProductRepository();
-        repo.save(firstBook);
-        repo.save(secondBook);
-        repo.save(thirdBook);
-
-
-        assertThrows(NotFoundException.class, () -> {
-            repo.findById(5);
-        });
-
-    }
 }
