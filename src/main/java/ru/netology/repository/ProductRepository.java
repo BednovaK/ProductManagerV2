@@ -26,7 +26,7 @@ public class ProductRepository {
                 return new Product[]{item};
             }
         }
-        throw new NotFoundException(id);
+        return null;
     }
 
     public void removeById(int id) {
